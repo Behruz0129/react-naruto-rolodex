@@ -12,9 +12,9 @@ const Card = ({ data, className }) => {
       <h2>{character.name}</h2>
       <h3>Ovoz Berdi:</h3>
       <ul className="voice-actors">
-        {voice_actors.map((item) => {
-          if (item.language === "English" || item.language === "Japanese") {
-            return (
+        {voice_actors.map(
+          (item) =>
+            (item.language === "English" || item.language === "Japanese") && (
               <li key={item.person.mal_id}>
                 <div className="left">
                   <img
@@ -29,9 +29,8 @@ const Card = ({ data, className }) => {
                   <p>{item.language}</p>
                 </div>
               </li>
-            );
-          }
-        })}
+            )
+        )}
       </ul>
     </div>
   );
